@@ -42,7 +42,7 @@ class Dashboard extends Component {
   export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-      { collection: 'projects'},
-      { collection: 'notifications', limit: 3}
+      { collection: 'projects', orderBy: ['createdAt','desc']},
+      { collection: 'notifications', limit: 3, orderBy: ['time','desc']}
     ])
   )(Dashboard);
